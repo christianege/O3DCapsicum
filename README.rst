@@ -7,7 +7,7 @@ License Information
 -------------------
 
 This Software is dual licensed. The dual license model is designed to meet 
-the needs commercial distributors and open source projects.
+the needs of both commercial distributors and open source projects.
 
 For Open Source Projects
 ------------------------
