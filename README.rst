@@ -1,7 +1,7 @@
-===============================================================================
-O3DCapsicum is a C# Class to connect to the famous ifm electronic O3D2xx camera  
-===============================================================================
-
+===========
+O3DCapsicum 
+===========
+This a C# Class to connect to the famous ifm electronic O3D2xx camera  
 
 License Information
 -------------------
@@ -19,3 +19,9 @@ For Commercial Applications
 ---------------------------
 For developers of commercial Application I can provide a commercial 
 licence agreement.
+
+Requirements
+------------
+
+This Class is build on top of the `Coook Computing <http://www.xml-rpc.net/>`_
+The XML-RPC.NET is released under the terms of the MIT X11 license. 
