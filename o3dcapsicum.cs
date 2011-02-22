@@ -232,7 +232,8 @@ namespace o3dcapsicum
         [XmlRpcMethod]
         System.Object[] MDAXMLGetProgram();
     }
-
+   
+	
     /// <summary>
     /// O3D control class
     /// </summary>
@@ -242,21 +243,22 @@ namespace o3dcapsicum
 
         public Dictionary<O3DImage.ImageType, string> commands;
 
-        public enum SamplingMode { Standard = 0, HighDynamic = 1 };
+		public enum SamplingMode { Standard = 0, HighDynamic = 1 };
         public enum ModulationFrequency { 
             SingleFirst  = 0,
             SingleSecond = 1,
             SingleThird  = 2
         };
 
-        public struct ImagerData
+		public class ImagerData
         {
-            ModulationFrequency freq;
-            SamplingMode samplingMode;
-            int integrationTimeSingle;
-            int integrationTimeDouble;
-            int delayTime;			 
+            public ModulationFrequency freq;
+            public SamplingMode samplingMode;
+            public int integrationTimeShort;
+            public int integrationTimeLong;
+            public int delayTime;			 
         };
+
 
         /// <summary>
         /// Constructor
@@ -744,17 +746,34 @@ namespace o3dcapsicum
             ret = proxy.MDAXMLDisconnectCP(localIpAdress);
             return (int)ret[0];
         }
-        public int getFrontendSettings(out ImagerData settings)
+		
+        public int getFrontendSettings(ref ImagerData settings)
         {
-            System.Object[] ret;
-            ret = proxy.MDAXMLGetFrontendData();
-            return (int)ret[0];
+            System.Object[] result;
+            result = proxy.MDAXMLGetFrontendData();
+			if (0 == (int)result[0])
+            {
+				settings.freq = (ModulationFrequency)result[2];
+    			settings.samplingMode = (SamplingMode) result[3];
+				settings.integrationTimeShort = (int)result[5];
+				settings.integrationTimeLong = (int)result[6];
+				settings.delayTime = (int)result[8];
+
+			}
+            return (int)result[0];
         }
 
         public int setFrontendSettings(ImagerData settings)
         {
             System.Object[] ret;
-            ret = proxy.MDAXMLSetFrontendData(0, 0, 1, 0, 1897, 200, 20, 80);
+            ret = proxy.MDAXMLSetFrontendData(0, 
+			                                  (int)settings.freq, 
+			                                  (int)settings.samplingMode, 
+			                                  0, 
+			                                  settings.integrationTimeLong,
+			                                  settings.integrationTimeShort, 20, 
+			                                  settings.delayTime
+			                                  );
             return (int)ret[0];
         }
 		
