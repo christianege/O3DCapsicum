@@ -29,6 +29,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <AssemblyOriginatorKeyFile>Properties\AssemblyInfo.cs</AssemblyOriginatorKeyFile>
     <CodePage>65001</CodePage>
+    <BaseDirectory>O3DCapsicum</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,7 +64,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>CookComputing.XmlRpcV2.dll</HintPath>
+      <HintPath>..\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

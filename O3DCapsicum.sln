@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O3DCapsicum", "O3DCapsicum.csproj", "{765777ED-785A-4347-A87B-E82A2EAE1D2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O3DCapsicum", "O3DCapsicum\O3DCapsicum.csproj", "{765777ED-785A-4347-A87B-E82A2EAE1D2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jalapeño", "Jalapeño\Jalapeño.csproj", "{583F20EE-9EAB-4F42-A66F-3FEA142159C4}"
 EndProject
