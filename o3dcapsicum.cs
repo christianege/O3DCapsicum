@@ -237,7 +237,7 @@ namespace o3dcapsicum
     /// <summary>
     /// O3D control class
     /// </summary>
-    class O3D
+    public class O3D
     {
 
 
