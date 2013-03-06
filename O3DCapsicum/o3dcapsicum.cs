@@ -289,7 +289,7 @@ namespace o3dcapsicum
             localIPAddress = ""; 
             // Get Own IP 
             IPAddress[] a = Dns.GetHostEntry(Dns.GetHostName()).AddressList;
-            if (1 == a.Length)
+            if (1 <= a.Length)
             {
                 localIPAddress = a[0].ToString();
                 ret = 0;
